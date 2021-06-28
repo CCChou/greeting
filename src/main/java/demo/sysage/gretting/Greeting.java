@@ -1,5 +1,7 @@
 package demo.sysage.gretting;
 
+import java.time.LocalDateTime;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -10,6 +12,6 @@ public class Greeting {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello RESTEasy";
+        return "Hello RESTEasy " + LocalDateTime.now();
     }
 }
