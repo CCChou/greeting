@@ -12,7 +12,8 @@ public class Greeting {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        String template = "Hello %s at %s\n";
         String msg = System.getenv("MESSAGE");
-        return msg + " " + LocalDateTime.now() + "\n";
+        return String.format(template, msg, LocalDateTime.now());
     }
 }
