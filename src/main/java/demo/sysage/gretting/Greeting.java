@@ -12,6 +12,7 @@ public class Greeting {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello RESTEasy " + LocalDateTime.now();
+        String msg = System.getenv("MESSAGE");
+        return msg + " " + LocalDateTime.now() + "\n";
     }
 }
